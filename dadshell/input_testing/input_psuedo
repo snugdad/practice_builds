@@ -1,0 +1,14 @@
+examples:
+
+|h|el"ll"o[\0] -> opnq?
+			1. shift char at pos " to pos |h|\
+			2. look for another quote after opnqs position(shift doesnt move it) (clsq seeks)
+|"|hell"o	3. if other quote (clsq is not null)
+				look for a mismatch quote (opnq seek)
+				if opnq seek is NULL
+					shift clsq to end
+				else 
+					shift clsq to opnq
+					ask for input(*opnq);
+
+			4. if not other quote

@@ -6,7 +6,7 @@
 /*   By: egoodale <egoodale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/18 13:27:15 by egoodale          #+#    #+#             */
-/*   Updated: 2018/07/19 09:14:52 by egoodale         ###   ########.fr       */
+/*   Updated: 2018/07/19 10:28:17 by egoodale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,10 @@ char		*normalize_arguments(t_vector *linev, char *opnq, size_t app)
 char	*dad_input(int fd)
 {
 	t_vector	linev;
-	size_t		mismatch;
-	char		*line;
-	size_t		len;
-	char *		nextq;
-	int first = 1;
-	mismatch = 0;
-	clsq = linev.data
+	char		*opnq;
+	char		*clsq;
+	char		*seek;
+
 	if (~ft_vector_init(&linev, LINE_IN_CAP))
 	{
 		clsq = linev.data;
@@ -69,9 +66,25 @@ char	*dad_input(int fd)
 			
 			len = ft_strlen(line);
 			ft_vector_append (&linev, line);
-			opnq = find_next_any(clsq, g_quotes)
-			clsq = opnq ? ft_strchr(opnq + 1, *opnq) : opnq;
-			opnq = normalize_arguments(&linev, opnq, app);
+			if ((clsq == linev.data) && !(opnq = find_next_any(opnq, g_quotes)))
+				break ;
+			else if ((clsq != linev.data) && (opnq = ft_strchr(clsq + 1, *clsq ))
+			{
+				ft_subvector_slide(&v, opnq, linev.data + len - 1, 1);
+				return(linev.data);
+			}
+			ft_subvector_slide(&v, opnq, seek, 1);
+			seek = opnq + 1;
+			
+			/*
+			if (clsq)
+			{
+				if(!(seek = find_next_any(clsq + 1, g_quotes)))
+					ft_subvector_slide(&v, clsq, v.data + v.len - 1, 1);
+				else
+					ft_subvector_slide(&v, seek, clsq, 1);
+			}
+			*/
 			if(!*(opnq) || !opnq)
 				break ;
 			quote_mismatch_message(*(find_next_any(line, g_quotes)));
