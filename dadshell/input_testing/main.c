@@ -6,7 +6,7 @@
 /*   By: egoodale <egoodale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/18 13:27:15 by egoodale          #+#    #+#             */
-/*   Updated: 2018/07/18 19:45:29 by egoodale         ###   ########.fr       */
+/*   Updated: 2018/07/19 09:14:52 by egoodale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*dad_input(int fd)
 		{
 			
 			len = ft_strlen(line);
-			ft_vector_append(&linev, line);
+			ft_vector_append (&linev, line);
 			opnq = find_next_any(clsq, g_quotes)
 			clsq = opnq ? ft_strchr(opnq + 1, *opnq) : opnq;
 			opnq = normalize_arguments(&linev, opnq, app);
